@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: <dockerhub-username>/backend:latest
+        image: nadunimadawala/backend:latest
         ports:
         - containerPort: 3000
 ---
@@ -23,7 +23,7 @@ kind: Service
 metadata:
   name: backend-service
 spec:
-  type: LoadBalancer
+  type: nodeport
   selector:
     app: backend
   ports:
